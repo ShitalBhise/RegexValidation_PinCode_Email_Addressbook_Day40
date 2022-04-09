@@ -25,3 +25,22 @@ console.log("Today we shall work on Address Book System using Node JS.");
     // Returns a map containing above details
     return contact;
 }
+
+
+/**
+ * UC 3: Create a new address book array and add new contacts to it 
+ * 
+ * @return: An array (addressbook) containing contacts
+ * 
+ * @param: arbitrary number of contacts
+ */
+ function createAddressBook(contact1,contact2){
+    // Create a new addressbook of type array
+    const addressBook = new Array();
+    for (let i=0;i<arguments.length;i++){
+        addressBook.push(arguments[i]);
+    }
+
+    // Returns an array containing above contacts
+    return addressBook;
+}
