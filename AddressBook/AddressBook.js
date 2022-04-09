@@ -44,3 +44,37 @@ console.log("Today we shall work on Address Book System using Node JS.");
     // Returns an array containing above contacts
     return addressBook;
 }
+
+/**
+ * UC 4 : Find existing contact person using their name and edit it
+ * 
+ * @return: An array (addressbook after modification) containing contacts
+ * 
+ * @param: addressbook, first and last name of contact to be edited, contact details to replace
+ */
+ function editExistingContact(addressbook, first_name,last_name, contact){
+    let range = addressbook.length;
+
+    // Loop through the contacts inside the address book
+    for(let i=0;i<range;i++){
+        
+        // Match for the contact using first and last name
+        if((addressbook[i].get("first_name") === first_name) &&(addressbook[i].get("last_name") === last_name)){
+            // edit the contact details
+            addressbook[i].set("first_name",contact.get("first_name"));
+            addressbook[i].set("last_name",contact.get("last_name"));
+            addressbook[i].set("address",contact.get("address"));
+            addressbook[i].set("city",contact.get("city"));
+            addressbook[i].set("state",contact.get("state"));
+            addressbook[i].set("zip",contact.get("zip"));
+            addressbook[i].set("phone_no",contact.get("phone_no"));
+            addressbook[i].set("email_id",contact.get("email_id"));
+        }
+    }
+
+    // Returns an array containing above contacts
+    return addressbook;
+}
+
+let contact_new = createValidatedContact("Shish","Pachpor","Nagar","Bengaluru","Karnataka",457838,9988776655,"SP@gmail.com");
+
